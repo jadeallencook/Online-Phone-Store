@@ -1,0 +1,26 @@
+div#login-form {
+    background-color: #FEFCF5;
+    text-align: center;
+    padding-bottom: 45px;
+}
+
+div#login-form input {
+    margin: 0px auto 15px auto;
+    width: 75%;
+    max-width: 350px;
+}
+
+div#login-form span.error {
+    color: #FF0000;
+    margin-top: 25px;
+}
+
+div#login-form span {
+    display: block;
+    width: 75%;
+    margin: 0px auto;
+}
+
+div#login-form span.copyright {
+    margin-top: 25px;
+}

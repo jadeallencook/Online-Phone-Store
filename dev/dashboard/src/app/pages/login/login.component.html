@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6" id="login-form">
+      <h2>Login</h2>
+      <input type="text" placeholder="Email" [(ngModel)]="email" class="form-control">
+      <input type="password" placeholder="Password" [(ngModel)]="password" class="form-control">
+      <button href="#fakelink" class="btn btn-fill btn-primary" (click)="signup()">Signup</button>
+      <button href="#fakelink" class="btn btn-fill btn-default" (click)="login(email, password)">Login</button>
+      <span class="error" *ngIf="error.length > 0">{{ error }}</span>
+      <span class="copyright">Developed by <b>Onflo</b></span>
+      <span><b>Online Phone Store</b> Copyright 2018</span>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>
