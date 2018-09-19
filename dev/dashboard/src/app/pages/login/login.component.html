@@ -5,7 +5,7 @@
       <h2>Login</h2>
       <input type="text" placeholder="Email" [(ngModel)]="email" class="form-control">
       <input type="password" placeholder="Password" [(ngModel)]="password" class="form-control">
-      <button href="#fakelink" class="btn btn-fill btn-primary" (click)="signup()">Signup</button>
+      <button href="#fakelink" class="btn btn-fill btn-primary" (click)="signup(email, password)">Signup</button>
       <button href="#fakelink" class="btn btn-fill btn-default" (click)="login(email, password)">Login</button>
       <span class="error" *ngIf="error.length > 0">{{ error }}</span>
       <span class="copyright">Developed by <b>Onflo</b></span>

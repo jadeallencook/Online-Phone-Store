@@ -13,18 +13,26 @@ export class LoginComponent implements OnInit {
   password:string = '';
   error:any = '';
 
-  constructor(private router: Router, private firebase: FirebaseService) { }
+  constructor(private router: Router, private firebase: FirebaseService) {
+    if (this.firebase.user) {
+      this.router.navigate(['profile']);
+    }
+  }
 
   login(email, password) {
     this.firebase.login(email, password).then((msg) => {
       this.router.navigate(['/profile']);
     }).catch((msg) => {
       this.error = msg;
-    })
+    });
   }
 
   signup(email, password) {
-
+    this.firebase.signup(email, password).then(() => {
+      this.login(email, password);
+    }).catch((msg) => {
+      this.error = msg;
+    });
   }
 
   ngOnInit() {

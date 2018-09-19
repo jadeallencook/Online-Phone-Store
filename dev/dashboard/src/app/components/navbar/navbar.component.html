@@ -13,7 +13,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navigation-example-2">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav" *ngIf="this.firebase.user">
         <li>
           <a routerLink="/profile" class="btn btn-fill">Profile</a>
         </li>
@@ -21,11 +21,11 @@
           <a routerLink="/buy" class="btn">Buy</a>
         </li>
         <li>
-            <a routerLink="/sell" class="btn">Sell</a>
-          </li>
+          <a routerLink="/sell" class="btn">Sell</a>
+        </li>
         <li>
-            <a routerLink="/repair" class="btn">Repair</a>
-          </li>
+          <a routerLink="/repair" class="btn">Repair</a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -34,12 +34,12 @@
             &nbsp;&nbsp;Email
           </a>
         </li>
-        <li>
-            <a routerLink="/login">
-              <i class="fa fa-lock"></i>
-              &nbsp;&nbsp;Logout
-            </a>
-          </li>
+        <li *ngIf="this.firebase.user">
+          <a (click)="logout()">
+            <i class="fa fa-lock"></i>
+            &nbsp;&nbsp;Logout
+          </a>
+        </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-->

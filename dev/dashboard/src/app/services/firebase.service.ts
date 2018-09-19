@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as firebase from 'firebase/app';
-import 'firebase/database';
-import 'firebase/auth';
+import * as firebase from 'firebase';
 import { Router } from '@angular/router';
 
 @Injectable()
@@ -9,12 +7,21 @@ export class FirebaseService {
 
   user: any = null;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    firebase.auth().onAuthStateChanged(() => {
+      this.user = firebase.auth().currentUser;
+      if (!this.user) {
+        this.router.navigate(['login']);
+      } else {
+        this.router.navigate(['profile']);
+      }
+    });
+  }
 
   login(email, password) {
     return new Promise((res, rej) => {
       firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-        this.router.navigate(['/profile']);
+        this.user = firebase.auth().currentUser;
         res();
       }).catch((error) => {
         rej(error.message);
