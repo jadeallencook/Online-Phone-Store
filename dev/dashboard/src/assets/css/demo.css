@@ -222,14 +222,13 @@
     background-color: #FF8F5E;
     background-position: center top;
     margin-top: -100px;
-    min-height: 600px;
 }
 .demo-header-image{
-    background-image: url('../paper_img/city.jpg');
+    background-image: url('../paper_img/phones.jpg');
 }
 .demo-header .motto{
     color: #FFFFFF;
-    padding-top: 25vh;
+    padding: 10vh 0px 4vh 0px;
     text-align: center;
     z-index: 3;
 }

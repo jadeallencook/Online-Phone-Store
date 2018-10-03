@@ -12,6 +12,8 @@ import { RepairComponent } from './pages/repair/repair.component';
 import { BuyComponent } from './pages/buy/buy.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SellComponent } from './pages/sell/sell.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -31,7 +33,9 @@ const appRoutes: Routes = [
     RepairComponent,
     BuyComponent,
     ProfileComponent,
-    SellComponent
+    SellComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

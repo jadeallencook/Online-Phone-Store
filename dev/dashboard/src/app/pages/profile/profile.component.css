@@ -1,0 +1,9 @@
+div.row > div > p {
+    font-weight: bold;
+    font-size: 0.75em;
+    margin: 15px 0px 5px 0px;
+}
+
+div.row > div > button {
+    margin-top: 25px;
+}

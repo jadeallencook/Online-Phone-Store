@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="navigation-example-2">
       <ul class="nav navbar-nav" *ngIf="this.firebase.user">
         <li>
-          <a routerLink="/profile" class="btn btn-fill">Profile</a>
+          <a routerLink="/profile" class="btn">Profile</a>
         </li>
         <li>
           <a routerLink="/buy" class="btn">Buy</a>
@@ -28,12 +28,6 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a href="mailto:hello@onflo.io">
-            <i class="fa fa-envelope"></i>
-            &nbsp;&nbsp;Email
-          </a>
-        </li>
         <li *ngIf="this.firebase.user">
           <a (click)="logout()">
             <i class="fa fa-lock"></i>
